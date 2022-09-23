@@ -1,1 +1,0 @@
-# Avoma-takehome
