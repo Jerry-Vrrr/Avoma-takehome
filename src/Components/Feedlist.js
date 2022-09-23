@@ -1,7 +1,9 @@
 import React from 'react'
+import './Feedlist.css';
+
 
 export default function Feedlist() {
   return (
-    <div>Feedlist</div>
+    <div className='feedlist'>Feedlist</div>
   )
 }
