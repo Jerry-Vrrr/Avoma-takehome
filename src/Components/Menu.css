@@ -1,0 +1,14 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(8px + 2vmin);
+    padding: .5em;
+    border-style: solid;
+    border-color: azure;
+    color: white;
+    width: 9em;
+    min-height: 3em;
+    margin: 1em;
+}

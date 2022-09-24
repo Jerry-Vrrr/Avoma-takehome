@@ -1,12 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import FeedContainer from './Components/FeedContainer';
+import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <Sidebar />
+      <FeedContainer />
     </div>
   );
 }
