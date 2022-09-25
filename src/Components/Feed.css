@@ -1,12 +1,31 @@
 .feed {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: flex-start;
+    contain: content;
     width: 100%;
-    height: 4em;
+    height: auto;
     margin: .15em;
-    font-size: calc(8px + 2vmin);
-    border-style: solid;
-    border-color: azure;
+    margin-left: 16em;
+    padding: .5em;
+    /* font-size: calc(8px + 2vmin); */
+    /* border-style: solid; */
+    border-bottom: solid;
+    border-color: #ffffff50;
+}
+
+h1 {
+font-size: 1em;
+margin: 0;
+}
+
+p {
+    font-size: .75em;
+    margin: 0;
+    margin-right: 10em;
+}
+
+a {
+    font-size: 1em;
 }
