@@ -1,13 +1,28 @@
 .sidebar {
-    min-height: 100vh;
-    width: 9em;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 11em;
     background: rgb(5,0,9);
-    background: linear-gradient(180deg, rgba(5,0,9,1) 59%, rgba(2,0,5,0.7189469537815126) 78%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     font-size: calc(10px + 2vmin);
-    padding: 1em;
+    padding: .5em;
     color: white;
   }
+
+  label {
+    font-size: larger;
+    color: rgb(166,71,230);
+    text-decoration: underline overline;
+  }
+
+  button {
+    font-size: calc(6px + 2vmin);
+}
+button:hover {
+  font-size: calc(7px + 2vmin);
+}
