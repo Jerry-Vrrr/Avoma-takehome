@@ -9,9 +9,26 @@
     width: 100%;
     height: fit-content;
     margin: .5em;
+    margin-left: 7em;
     font-size: calc(8px + 2vmin);
     padding: 1em;
     padding-right: 2em;
-    /* border-style: solid;
-    border-color: azure; */
+}
+
+a:hover {
+    font-size: calc(1em + .25vmin);
+  }
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-left: 9em;
+    justify-content: space-around;
+}  
+
+h1 {
+    font-size: larger;
+    color: #0000000;
+    text-decoration: underline overline;
 }
