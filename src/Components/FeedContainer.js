@@ -32,7 +32,7 @@ export default function FeedContainer({
     <div className="feed-container">
       <div className="header">
         <h1>{currentFeed}</h1>
-        <p>{feeds.length} Articles</p>
+        <p>{articles.length} Articles</p>
       </div>
       {articles}
     </div>

@@ -3,6 +3,7 @@ import FeedContainer from './Components/FeedContainer';
 import Sidebar from './Components/Sidebar';
 import FavoriteModal from './Components/FavoriteModal';
 import { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 
 
 function App() {
@@ -29,13 +30,13 @@ function App() {
 
   useEffect(() => {
     getRss('http://www.newyorker.com/feed/humor')
-    setFavorites(sessionStorage)
+    setFavorites(Cookies.get())
+    console.log(favorites)
   }, [])
 
-  
   return (
     <div className="App">
-      {favorites.length &&<FavoriteModal 
+      {<FavoriteModal 
         modalIsOpen={modalIsOpen}
         setIsOpen={setIsOpen}
         favorites={favorites}
@@ -45,6 +46,7 @@ function App() {
         getRss={getRss}
         setCurrentFeed={setCurrentFeed}
         setItems={setItems}
+        setFavorites={setFavorites}
         favorites={favorites}
         setIsOpen={setIsOpen}
       />
