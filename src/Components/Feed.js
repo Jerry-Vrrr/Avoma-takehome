@@ -1,7 +1,8 @@
 import './Feed.css';
 import bookmark from '../bookmark-pngrepo-com.png'
 import bookmarked from '../bookmarked-pngrepo-com.png'
- 
+import Cookies from 'js-cookie';
+
 export default function Feed({title, description, link, items, marked, id, favorites, setFavorites}) {
   
   const saveArticle = (e) => {
@@ -11,19 +12,17 @@ export default function Feed({title, description, link, items, marked, id, favor
       if (items.indexOf(item) + 1 == e.target.parentNode.parentNode.id && !item.marked) {
         item.marked = true
         e.target.src = bookmarked
-        setFavorites(sessionStorage)
-        sessionStorage.setItem(item.title, JSON.stringify(item.link))
+        Cookies.set(items.indexOf(item) + 1 , JSON.stringify(item.link))
+        setFavorites(Cookies.get())
       }
       else if (items.indexOf(item) + 1 == e.target.parentNode.parentNode.id && item.marked) {
         item.marked = false
         e.target.src = bookmark
-        sessionStorage.removeItem(item.title)
-        setFavorites(sessionStorage)
+        Cookies.remove(items.indexOf(item) + 1)
+        setFavorites(Cookies.get())
       }
     })
   }
-
-
 
   return (
     <div id={id} className='feed'>
@@ -31,7 +30,7 @@ export default function Feed({title, description, link, items, marked, id, favor
         <h2>{title}</h2>
         <p>{description}</p>
         <a href={link}>Full Article</a>
-        <img onClick={(e) => saveArticle(e)} className='bookmark' src={bookmark}/> 
+        <img alt='save-article' onClick={(e) => saveArticle(e)} className='bookmark' src={bookmark}/> 
       </div>
     </div>
   )

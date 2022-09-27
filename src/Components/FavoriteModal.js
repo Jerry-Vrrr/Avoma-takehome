@@ -1,6 +1,7 @@
 // import React, { useState } from "react";
 import Modal from "react-modal";
 import './FavoriteModal.css'
+import Cookies from 'js-cookie';
 
   export default function FavoriteModal ({modalIsOpen, setIsOpen, favorites, setFavorites}) {
   
@@ -9,12 +10,12 @@ import './FavoriteModal.css'
     }
     const removeFavorite = (e) => {
         setFavorites(Object.values(favorites).filter((fav, i) => i != e.target.parentNode.value - 1))
-        console.log(e.target.parentNode.value - 1)
+        Cookies.remove(e.target.parentNode.value)
     }
 
     const clearAll = () => {
         setFavorites([])
-        sessionStorage.clear()
+        localStorage.clear()
         setIsOpen(false)
     }
   
@@ -26,8 +27,9 @@ import './FavoriteModal.css'
         >
           <h2>Favorites</h2>
           <h3 className='close' onClick={closeModal}>&times;</h3>
+          { !Object.values(favorites).length && <h4>No Favorites Yet!</h4>}
           <ol>
-          { Object.values(favorites).map((fav, i) => <li value={i+1} ><a href={fav}>{fav}</a><h4 className='remove' onClick={(e) => removeFavorite(e) }>🗑</h4></li>)}
+          { Object.values(favorites).map((fav, i) => <li value={i+1} ><a href={JSON.parse(fav)}>{fav}</a><h4 className='remove' onClick={(e) => removeFavorite(e) }>🗑</h4></li>)}
           </ol>
           <h4 className='clear' onClick={() => clearAll()}>Clear All</h4>
         </Modal>

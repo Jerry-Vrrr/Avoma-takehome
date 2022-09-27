@@ -3,7 +3,7 @@ import './Sidebar.css';
 import Menu from './Menu';
 import Feedlist from './Feedlist';
 
-export default function Sidebar({getRss, setCurrentFeed, setItems, favorites, setIsOpen}) {
+export default function Sidebar({getRss, setCurrentFeed, setItems, favorites, setIsOpen, setFavorites}) {
 
   const changeFeed = (e) => {
     e.preventDefault()
@@ -20,6 +20,7 @@ export default function Sidebar({getRss, setCurrentFeed, setItems, favorites, se
       changeFeed={changeFeed}
       setItems={setItems}
       favorites={favorites}
+      setFavorites={setFavorites}
       setIsOpen={setIsOpen}
       />
       <Feedlist 
