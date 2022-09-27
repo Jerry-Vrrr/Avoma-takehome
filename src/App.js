@@ -1,6 +1,7 @@
 import './App.css';
 import FeedContainer from './Components/FeedContainer';
 import Sidebar from './Components/Sidebar';
+import FavoriteModal from './Components/FavoriteModal';
 import { useEffect, useState } from 'react';
 
 
@@ -9,7 +10,8 @@ function App() {
   const [rssUrl, setRssUrl] = useState("");
   const [currentFeed, setCurrentFeed] = useState('Home')
   const [favorites, setFavorites] = useState([])
-  console.log('fav', favorites)
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   const getRss = async (url) => {
     const res = await fetch(`https://api.allorigins.win/get?url=${url}`);
     const { contents } = await res.json();
@@ -25,13 +27,23 @@ function App() {
 
   useEffect(() => {
     getRss('http://www.newyorker.com/feed/humor')
+    setFavorites(sessionStorage)
   }, [])
 
   return (
     <div className="App">
+      {favorites.length &&<FavoriteModal 
+        modalIsOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+        favorites={favorites}
+        setFavorites={setFavorites}
+      />}
       <Sidebar 
         getRss={getRss}
         setCurrentFeed={setCurrentFeed}
+        setItems={setItems}
+        favorites={favorites}
+        setIsOpen={setIsOpen}
       />
       <FeedContainer 
       items={items}

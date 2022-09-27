@@ -14,14 +14,14 @@
     color: white;
   }
 
-  label {
-    font-size: larger;
-    color: rgb(166,71,230);
-    text-decoration: underline overline;
-  }
+label {
+  font-size: larger;
+  color: rgb(166,71,230);
+  text-decoration: underline overline;
+}
 
-  button {
-    font-size: calc(6px + 2vmin);
+button {
+  font-size: calc(6px + 2vmin);
 }
 button:hover {
   font-size: calc(7px + 2vmin);
