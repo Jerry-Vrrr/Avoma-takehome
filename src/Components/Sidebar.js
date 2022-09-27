@@ -9,6 +9,7 @@ export default function Sidebar({getRss, setCurrentFeed, setItems, favorites, se
     e.preventDefault()
     getRss(e.target.value)
     setCurrentFeed(e.target.innerText)
+    setIsOpen(false)
   }
 
   return (
@@ -24,6 +25,7 @@ export default function Sidebar({getRss, setCurrentFeed, setItems, favorites, se
       <Feedlist 
       getRss={getRss}
       setCurrentFeed={setCurrentFeed}
+      setIsOpen={setIsOpen}
       changeFeed={changeFeed}
       />
     </div>

@@ -8,7 +8,8 @@ import './FavoriteModal.css'
       setIsOpen(false);
     }
     const removeFavorite = (e) => {
-        setFavorites(Object.values(favorites).filter((fav, i) => i != e.target.parentNode.value))
+        setFavorites(Object.values(favorites).filter((fav, i) => i != e.target.parentNode.value - 1))
+        console.log(e.target.parentNode.value - 1)
     }
 
     const clearAll = () => {
@@ -26,7 +27,7 @@ import './FavoriteModal.css'
           <h2>Favorites</h2>
           <h3 className='close' onClick={closeModal}>&times;</h3>
           <ol>
-          { Object.values(favorites).map((fav, i) => <li value={i} ><a href={fav}>{fav}</a><h4 className='remove' onClick={(e) => removeFavorite(e) }>🗑</h4></li>)}
+          { Object.values(favorites).map((fav, i) => <li value={i+1} ><a href={fav}>{fav}</a><h4 className='remove' onClick={(e) => removeFavorite(e) }>🗑</h4></li>)}
           </ol>
           <h4 className='clear' onClick={() => clearAll()}>Clear All</h4>
         </Modal>
@@ -36,15 +37,21 @@ import './FavoriteModal.css'
 
   const customStyles = {
     content: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignContent: 'center',
+      justifyContent: 'flex-start',
+      flexWrap: 'wrap',
       top: '50%',
       left: '50%',
-      right: '50',
-      bottom: '20',
-      height: '80%',
-      with: '60%',
-      marginLeft: '15%',
+      right: '60',
+      bottom: '40',
+      height: '70vh',
+      with: '50vw',
+      marginLeft: '10em',
+      padding: '4em',
       transform: 'translate(-50%, -50%)',
-      zindex: '2',
+      zIndex: '2 !important',
     },
   };
   

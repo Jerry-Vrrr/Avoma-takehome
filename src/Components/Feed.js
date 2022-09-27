@@ -8,7 +8,6 @@ export default function Feed({title, description, link, items, marked, id, favor
     e.preventDefault();
 
     items.map(item => {
-      
       if (items.indexOf(item) + 1 == e.target.parentNode.parentNode.id && !item.marked) {
         item.marked = true
         e.target.src = bookmarked
@@ -18,11 +17,13 @@ export default function Feed({title, description, link, items, marked, id, favor
       else if (items.indexOf(item) + 1 == e.target.parentNode.parentNode.id && item.marked) {
         item.marked = false
         e.target.src = bookmark
-        setFavorites(sessionStorage)
         sessionStorage.removeItem(item.title)
+        setFavorites(sessionStorage)
       }
     })
   }
+
+
 
   return (
     <div id={id} className='feed'>
