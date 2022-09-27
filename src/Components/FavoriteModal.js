@@ -37,15 +37,21 @@ import './FavoriteModal.css'
 
   const customStyles = {
     content: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignContent: 'center',
+      justifyContent: 'flex-start',
+      flexWrap: 'wrap',
       top: '50%',
       left: '50%',
-      right: '50',
-      bottom: '20',
-      height: '80%',
-      with: '60%',
-      marginLeft: '15%',
+      right: '60',
+      bottom: '40',
+      height: '70vh',
+      with: '50vw',
+      marginLeft: '10em',
+      padding: '4em',
       transform: 'translate(-50%, -50%)',
-      zIndex: '2',
+      zIndex: '2 !important',
     },
   };
   
