@@ -4,17 +4,14 @@ import Feed from "./Feed";
 
 export default function FeedContainer({
   items,
-  setRssUrl,
-  rssUrl,
-  getRss,
   currentFeed,
-  marked,
-  setMarked,
+  feeds,
   setItems,
   favorites,
   setFavorites
 }) {
-  const feeds = items.map((item) => {
+  
+  const articles = items.map((item) => {
     return (
       <Feed
         key={items.indexOf(item) + 1}
@@ -22,8 +19,7 @@ export default function FeedContainer({
         title={item.title}
         description={item.description}
         link={item.link}
-        setMarked={setMarked}
-        marked={false}
+        marked={item.marked}
         items={items}
         setItems={setItems}
         favorites={favorites}
@@ -31,13 +27,14 @@ export default function FeedContainer({
       />
     );
   });
+
   return (
     <div className="feed-container">
       <div className="header">
         <h1>{currentFeed}</h1>
         <p>{feeds.length} Articles</p>
       </div>
-      {feeds}
+      {articles}
     </div>
   );
 }

@@ -11,6 +11,7 @@ function App() {
   const [currentFeed, setCurrentFeed] = useState('Home')
   const [favorites, setFavorites] = useState([])
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [feeds, setFeeds] = useState([])
 
   const getRss = async (url) => {
     const res = await fetch(`https://api.allorigins.win/get?url=${url}`);
@@ -21,6 +22,7 @@ function App() {
       link: el.querySelector("link").innerHTML,
       title: el.querySelector("title").innerHTML,
       description: el.querySelector("description").innerHTML,
+      marked: false
     }));
     setItems(feedItems);
   };
@@ -30,6 +32,7 @@ function App() {
     setFavorites(sessionStorage)
   }, [])
 
+  
   return (
     <div className="App">
       {favorites.length &&<FavoriteModal 
@@ -48,6 +51,8 @@ function App() {
       <FeedContainer 
       items={items}
       setItems={setItems}
+      feeds={feeds}
+      setFeeds={setFeeds}
       rssUrl={rssUrl}
       setRssUrl={setRssUrl}
       getRss={getRss}

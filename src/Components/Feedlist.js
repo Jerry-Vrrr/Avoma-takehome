@@ -2,13 +2,7 @@ import React from 'react'
 import './Feedlist.css';
 
 
-export default function Feedlist({getRss, setCurrentFeed, changeFeed}) {
-
-  // const changeFeed = (e) => {
-  //   e.preventDefault()
-  //   getRss(e.target.value)
-  //   setCurrentFeed(e.target.innerText)
-  // }
+export default function Feedlist({changeFeed}) {
 
   return (
     <div className='feedlist'>
