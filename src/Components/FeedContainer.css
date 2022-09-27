@@ -3,11 +3,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 100vw;
-    height: 100vh;
+    background: rgb(166,71,230);
+    background: linear-gradient(90deg, rgba(166,71,230,1) 0%, rgba(153,69,252,1) 36%, rgba(117,13,238,1) 77%);
+    contain: content;
+    width: 100%;
+    height: fit-content;
     margin: .5em;
+    margin-left: 7em;
     font-size: calc(8px + 2vmin);
     padding: 1em;
-    border-style: solid;
-    border-color: azure;
+    padding-right: 2em;
+}
+
+a:hover {
+    font-size: calc(1em + .25vmin);
+  }
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-left: 9em;
+    justify-content: space-around;
+}  
+
+h1 {
+    font-size: larger;
+    color: #0000000;
+    text-decoration: underline overline;
 }
