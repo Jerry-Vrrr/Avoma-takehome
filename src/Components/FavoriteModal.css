@@ -1,0 +1,19 @@
+.close {
+    margin-left: 30em;
+}
+
+li {
+    margin-bottom: 1.5em;
+}
+
+.remove {
+    margin-left: 32em;
+    margin-top: -1em;
+}
+
+.clear {
+    margin-left: 16em; 
+    margin-top: 6em;
+    text-decoration: underline;
+    color: blueviolet;
+}
