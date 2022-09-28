@@ -9,7 +9,6 @@ export default function Menu({changeFeed, favorites, setIsOpen, setFavorites}) {
     setFavorites(Cookies.get())
     console.log(favorites)
     setIsOpen(true)
-    // return favorites.length ? setIsOpen(true) : alert('No Favorites')
   }
   
   return (

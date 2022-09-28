@@ -5,7 +5,6 @@ import Feed from "./Feed";
 export default function FeedContainer({
   items,
   currentFeed,
-  feeds,
   setItems,
   favorites,
   setFavorites
