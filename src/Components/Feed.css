@@ -1,42 +1,42 @@
 .feed {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    contain: content;
-    width: 65%;
-    height: auto;
-    margin: .15em;
-    margin-left: 9em;
-    padding: .5em;
-    border-bottom: solid;
-    border-color: #ffffff50;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  contain: content;
+  width: 65%;
+  height: auto;
+  margin: 0.15em;
+  margin-left: 9em;
+  padding: 0.5em;
+  border-bottom: solid;
+  border-color: #ffffff50;
 }
 
-.header {
-    margin-left: calc(240px + 10vmin);
-}
+/* .header {
+  margin-left: calc(240px + 10vmin);
+} */
 
 h2 {
-font-size: 1em;
-margin: 0;
+  font-size: 1em;
+  margin: 0;
 }
 
 p {
-    font-size: .75em;
-    margin: 0;
+  font-size: 0.75em;
+  margin: 0;
 }
 
 a {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .bookmark {
-    height: 1em;
-    margin-left: 1em;
-    margin-bottom: -.2em;
+  height: 1em;
+  margin-left: 1em;
+  margin-bottom: -0.2em;
 }
 
 .bookmark:hover {
-    font-size: calc(7px + 2vmin);
-  }
+  font-size: calc(7px + 2vmin);
+}

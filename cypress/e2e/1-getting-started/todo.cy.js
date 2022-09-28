@@ -57,9 +57,6 @@ describe('RSS Feed App', () => {
     cy.get('ol').should('have.length', 1)
     cy.get('ol').get('.remove').last().click()
     cy.get('.close').click()
-    cy.get('.favorites').click()
-    cy.get('.clear').click()
-    cy.get('.favorites').click()
   })
 
 })
